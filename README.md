@@ -6,6 +6,7 @@
 
 ## Dependencies
 
+* [python3](https://www.python.org)
 * Iosevka Nerd Font
 * [qbittorrent-api](https://pypi.org/project/qbittorrent-api/)
 
@@ -18,7 +19,6 @@ username='admin'
 password='adminadmin'
 host='localhost'
 port='8080'
-display_without_active = False
 ```
 
 By default, the module will not show if no torrent is active. Set `display_without_active` to `True` if you want to show it while no torrent is active
@@ -35,5 +35,5 @@ Use it in your polybar `config` as
 [module/qbittorrent]  
 type = custom/script  
 exec = "/path/to/polybar-qbittorrent"  
-tail = true
+interval = 0.1
 ````
