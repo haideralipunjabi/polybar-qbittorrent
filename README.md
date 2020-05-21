@@ -2,7 +2,7 @@
 
 [qBittorrent](https://github.com/qbittorrent/qBittorrent) module for [Polybar](https://github.com/jaagr/polybar)
 
-![screenshot](screenshot.gif)
+![screenshot](screenshot.png)
 
 ## Dependencies
 
@@ -15,8 +15,8 @@
 Modify `polybar-qbittorrent` file to match your qBittorrent config:
 
 ``` python
-username='admin'
-password='adminadmin'
+username=''
+password=''
 host='localhost'
 port='8080'
 ```
