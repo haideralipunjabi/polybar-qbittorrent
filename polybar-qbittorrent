@@ -1,0 +1,36 @@
+#!/usr/bin/env python3
+import qbittorrentapi
+
+# Config
+username=''
+password=''
+host='locahost'
+port='8080'
+display_without_active = False
+
+####
+
+qbc = qbittorrentapi.Client(host=host,username=username,password=password, port=port, SIMPLE_RESPONSES=True)
+failed = False
+try:
+    qbc.auth_log_in()
+except:
+    print("")
+    failed=True
+if not failed:
+    dlspeed = qbc.transfer.info['dl_info_speed']/1024
+    dlunit = "kB/s"
+    if dlspeed > 1024:
+        dlunit = "mB/s"
+        dlspeed = dlspeed/1024
+    upspeed = qbc.transfer.info['up_info_speed']/1024
+    upunit = "kB/s"
+    if upspeed > 1024:
+        upunit = "mB/s"
+        upspeed = upspeed/1024
+
+    active = len(qbc.torrents.info.active())
+    if active or display_without_active:
+        print(f' {active}  {upspeed:.2f}{upunit}  {dlspeed:.2f}{dlunit}')
+    else:
+        print("")
