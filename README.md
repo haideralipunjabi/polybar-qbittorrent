@@ -37,3 +37,6 @@ type = custom/script
 exec = "/path/to/polybar-qbittorrent"  
 interval = 0.1
 ````
+
+## Also See
+[KDEConenct Module for Polybar](https://github.com/HackeSta/polybar-kdeconnect)
